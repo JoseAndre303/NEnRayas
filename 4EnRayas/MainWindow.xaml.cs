@@ -81,7 +81,7 @@ namespace _4EnRayas
 
         private bool ComprobarVictoria(int row, int column, Brush color)
         {
-            // Horizontal check
+            // check Horizontal 
             int auxcount = 0;
             for (int i = Math.Max(0, column - 4); i <= Math.Min(6, column + 4); i++)
             {
@@ -96,7 +96,7 @@ namespace _4EnRayas
                 }
             }
 
-            // Vertical check
+            // check Vertical 
             auxcount = 0;
             for (int i = Math.Max(0, row - 4); i <= Math.Min(5, row + 4); i++)
             {
@@ -111,7 +111,7 @@ namespace _4EnRayas
                 }
             }
 
-            // Diagonal check (top-left to bottom-right)
+            // check Diagonal (derecha a izquierda)
             auxcount = 0;
             int j = column - Math.Min(row, column);
             for (int i = Math.Max(0, row - Math.Min(row, column)); i <= Math.Min(5, row + (6 - column)); i++)
@@ -128,7 +128,7 @@ namespace _4EnRayas
                 j++;
             }
 
-            // Diagonal check (bottom-left to top-right)
+            // check Diagonal (izquierda a derecha)
             auxcount = 0;
             j = column - Math.Min(5 - row, column);
             for (int i = Math.Min(5, row + Math.Min(5 - row, column)); i >= Math.Max(0, row - (6 - column)); i--)
