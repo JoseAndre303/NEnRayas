@@ -1,0 +1,32 @@
+﻿<Window x:Class="NenRaya.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="N En Rayas" MinWidth="1000" MinHeight="600" Height="auto" Width="auto" Background="Red">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Border Background="White" CornerRadius="10" Padding="10" Margin="18,140,22,114">
+			<StackPanel Name="stackpanel" Background="Red" Orientation="Vertical">
+				<TextBlock Text="N En Rayas" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,5" FontFamily="Verdana Pro">
+					<TextBlock.Triggers>
+						<EventTrigger RoutedEvent="Loaded">
+							<BeginStoryboard>
+								<Storyboard>
+									<DoubleAnimation Storyboard.TargetProperty="Opacity"
+													 From="0" To="1" Duration="0:0:3" />
+								</Storyboard>
+							</BeginStoryboard>
+						</EventTrigger>
+					</TextBlock.Triggers>
+				</TextBlock>
+				<StackPanel  Orientation="Vertical" HorizontalAlignment="Center" Margin="0,0,0,10">
+					<Button Content="Jugar" Background="#2B2B2B" Foreground="White" Margin="20" Padding="15" MinWidth="150" Click="Button_Click_4"/>
+					<Button Content="Opciones" Background="#2B2B2B" Foreground="White" Margin="20" Padding="15" MinWidth="150" Click="Button_Click_5" />
+				</StackPanel>
+			</StackPanel>
+		</Border>
+	</Grid>
+</Window>

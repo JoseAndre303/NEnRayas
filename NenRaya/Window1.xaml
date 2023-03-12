@@ -1,0 +1,101 @@
+﻿<Window x:Class="NenRaya.Window1"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NenRaya"
+        mc:Ignorable="d"
+        Title="Opciones" Height="auto" Width="auto" MinWidth="400" MinHeight="300" Background="Red">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Style.Triggers>
+                <Trigger Property="IsVisible" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" 
+                                        From="Black" To="Gold" Duration="0:0:2" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            
+
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Opciones de Victoria" FontSize="20" FontFamily="Verdana Pro Black"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="3" Background="Black" Foreground="White" Margin="0,0,10,0" MinWidth="60" Click="Button_Click_3"/>
+                <Button Content="4" Foreground="White" Background="#FF0A0202" Margin="0,0,10,0" MinWidth="60" Click="Button_Click_4"/>
+                <Button Content="5" Foreground="White" Background="Black" MinWidth="60"  Click="Button_Click_5" />
+            </StackPanel>
+
+        </Grid>
+
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Opciones de colores" FontSize="20" FontFamily="Verdana Pro Black"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Rojo y amarillo" Background="Black" Foreground="White" Margin="0,0,10,0" MinWidth="100" Click="Button_Click_RojoAmarillo"/>
+                <Button Content="Azul y Verde" Foreground="White" Background="Black" MinWidth="100" Click="Button_Click_AzulVerde" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontSize="20" FontFamily="Verdana Pro Black"><Run Text="Opciones del fondo"/><LineBreak/><Run/></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Rojo" Background="Black" Foreground="White" Margin="0,0,10,0"  MinWidth="100" Click="Button_Click_Fondo1"/>
+                <Button Content="Amarillo" Foreground="White" Background="Black" MinWidth="101" Click="Button_Click_Fondo2" />
+            </StackPanel>
+        </Grid>
+
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="Inicio" Background="Black" Foreground="White" Margin="5" Click="Button_Click_1" MinWidth="150"/>
+            <Button Content="Jugar" Background="Black" Foreground="White" Margin="5" Click="Button_Click_2" MinWidth="150"/>
+        </StackPanel>
+    </Grid>
+</Window>
